@@ -96,6 +96,12 @@ export function getSupabaseAdminClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
     "";
 
+  if (!supabaseSecretKey) {
+    throw new Error(
+      "Missing SUPABASE_SECRET_KEY (or NEXT_PUBLIC_SUPABASE_ANON_KEY) environment variable in deployment settings."
+    );
+  }
+
   return createClient(supabaseUrl, supabaseSecretKey, {
     auth: { persistSession: false },
   });

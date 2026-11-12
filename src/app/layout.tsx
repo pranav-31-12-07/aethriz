@@ -30,16 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-full flex flex-col font-sans bg-[#F1F5F9] text-[#1D1F22] antialiased selection:bg-[#E3202B] selection:text-white relative">
+    <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-sans bg-[#F1F5F9] text-[#1D1F22] antialiased selection:bg-[#E3202B] selection:text-white relative"
+      >
         {/* Signature Ethereal Ambient Red Navbar Glow Aura across ALL pages */}
         <div className="ae-top-nav-glow" aria-hidden="true" />
         <AuthProvider>
